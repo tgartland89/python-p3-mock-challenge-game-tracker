@@ -1,3 +1,4 @@
+# I start with where I have the least failing tests- here
 # adding Result.all.append(self) clears this pytest 
 
 # FAILED Result in result.py test Result class all attribute - assert 0 == 2
@@ -23,7 +24,8 @@ class Result:
         game.players(player)
         player.results(self)
         player.games_played(game)
-        
+
+# ************************************************************************************************************************************
 
 # Sample of what I mirrored 
 # class Order:
@@ -41,5 +43,68 @@ class Result:
 #         customer.orders(self)
 #         customer.coffees(coffee)
 
+# ***********************************************************************************************************************************
 
+# original 
+# class Result:
 
+#     all = []
+
+#     def __init__(self, player, game, score):
+#         self.player = player
+#         self.game = game
+#         self.score = score
+
+# *****************************************************************************************************************************************
+
+# Solution from GitHub- 
+# I did not need and of the @'s to pass my pytests and complete the lab- will that mess me up? 
+# 
+# class Result:
+
+#     all = []
+
+#     def __init__(self, player, game, score):
+#         self.player = player
+#         self.game = game
+#         self.score = score
+#         Result.all.append(self)
+
+#         game.results(self)
+#         game.players(player)
+
+#         player.results(self)
+#         player.games_played(game)
+
+#     @property
+#     def player(self):
+#         return self._player
+    
+#     @player.setter
+#     def player(self, player):
+#         from classes.player import Player
+#         if isinstance(player, Player):
+#             self._player = player
+#         else:
+#             raise Exception
+        
+#     @property
+#     def game(self):
+#         return self._game
+    
+#     @game.setter
+#     def game(self, game):
+#         from classes.game import Game
+#         if isinstance(game, Game):
+#             self._game = game
+
+#     @property
+#     def score(self):
+#         return self._score
+    
+#     @score.setter
+#     def score(self, score):
+#         if 1 <= score <= 5000:
+#             self._score = score
+#         else:
+#             raise Exception 

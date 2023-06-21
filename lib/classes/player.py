@@ -6,8 +6,6 @@ class Player:
         self.username = username
         self._results = []
         self._games_played = []
-
-      
         
     def results(self, new_result=None):
         from classes.result import Result
@@ -34,8 +32,7 @@ class Player:
     def played_game(self, game):
         return game in self._games_played
     
-# researched through google how to get the above and clear the fail- it looked simmilar to the def_num_orders(self), 
-# but is also passing game through 
+# researched through google how to get the above and clear the fail- it looked simmilar to the def_num_orders(self) in games.py but is also passing game through 
 # FAILED Player in player.py Player has played the game. - assert None == True
 
 # The above  code defines a method called played_game within a class and takes the paramaters self and game to check if the game is present 
@@ -47,7 +44,7 @@ class Player:
     def num_times_played(self, game):
         return len([r for r in self._results if r.game == game])
     
-# also resaearched on how to clear- this one was simmilar to the def average_score in the game.py
+# also resaearched on how to clear the above- this one was simmilar to the def average_score in the game.py
 # FAILED Player in player.py Player has played the game. - assert None == True
 
 # the purpose of this method is to count the number of times a specific game has been played. 
@@ -86,3 +83,90 @@ class Player:
 #             self._coffees.append(new_coffee)
             
 #         return  self._coffees
+
+# ********************************************************************************************************************************************
+
+# original code from GitHub
+
+# class Player:
+
+#     all = []
+
+#     def __init__(self, username):
+#         self.username = username
+#         self._results = []
+#         self._games_played = []
+        
+#     def results(self, new_result=None):
+#         from classes.result import Result
+#         pass
+    
+#     def games_played(self, new_game=None):
+#         from classes.game import Game
+#         pass
+    
+#     def played_game(self, game):
+#         pass
+    
+#     def num_times_played(self, game):
+#         pass
+    
+#     @classmethod
+#     def highest_scored(cls, game):
+#         pass
+
+# ******************************************************************************************************************************************
+# Solution from GitHub- 
+# I didn't add Player.all.append(self), none of the  @property or @username.setter- also got rid of @classmethod at bottom- 
+# will that fail me? 
+
+# class Player:
+
+#     all = []
+
+#     def __init__(self, username):
+#         self.username = username
+#         self._results = []
+#         self._games_played = []
+#         Player.all.append(self)
+
+#     @property
+#     def username(self):
+#         return self._username
+
+#     @username.setter
+#     def username(self, username):
+#         if isinstance(username, str) and 2 <= len(username) <= 16:
+#             self._username = username
+#         else:
+#             raise Exception
+        
+#     def results(self, new_result=None):
+#         from classes.result import Result
+#         if new_result and isinstance(new_result, Result):
+#             self._results.append(new_result)
+#         return self._results
+    
+#     def games_played(self, new_game=None):
+#         from classes.game import Game
+#         if new_game and isinstance(new_game, Game):
+#             self._games_played.append(new_game)
+#         return self._games_played
+    
+#     def played_game(self, game):
+#         return game in self._games_played
+    
+#     def num_times_played(self, game):
+#         return len([r for r in self._results if r.game == game])
+    
+#     @classmethod
+#     def highest_scored(cls, game):
+#         if cls.all:
+#             max_player = None
+#             max_score = 0
+#             for p in cls.all:
+#                 if game.average_score(p) > max_score:
+#                     max_player = p
+#                     max_score = game.average_score(p)
+#             return max_player
+#         return None
