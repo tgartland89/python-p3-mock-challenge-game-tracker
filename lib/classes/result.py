@@ -1,4 +1,4 @@
-# I start with where I have the least failing tests- here
+# I start here with where I have the least failing tests- Result 
 # adding Result.all.append(self) clears this pytest 
 
 # FAILED Result in result.py test Result class all attribute - assert 0 == 2
@@ -58,7 +58,7 @@ class Result:
 # *****************************************************************************************************************************************
 
 # Solution from GitHub- 
-# I did not need and of the @'s to pass my pytests and complete the lab- will that mess me up? 
+# I did not need to add the @'s to pass my pytests and complete the lab- will that mess me up? 
 # 
 # class Result:
 

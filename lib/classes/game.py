@@ -12,7 +12,7 @@ class Game:
             self._results.append(new_result)
         return self._results
 
-# adding the if new_result and isinstance passing new_result with Result- append the self and retrun .self_reulults so it won't itterate  
+# adding the if new_result and isinstance passing new_result with Result- append the self and retrun .self_reulults so it won't itterate - mirrored from def orders in coffee challenge  
 # FAILED 1 Game in game.py Game has many results. - TypeError: object of type 'NoneType' has no len()
 # FAILED 2 Game in game.py game results are of type Result - TypeError: 'NoneType' object is not subscriptable
     
@@ -75,9 +75,12 @@ class Game:
 
 # class Game:
 #     def __init__(self, title):
-#         self.title = title
+#         self._title = title
 #         self._results = []
 #         self._players = []
+
+    # def get_title(self):
+    #   return self._title
         
 #     def results(self, new_result=None):
 #         from classes.result import Result
@@ -91,7 +94,7 @@ class Game:
 #         pass
 
 # *****************************************************************************************************************************
-# Solution from GitHub- I DID NOT NEED @property and @title.setter to pass my pytest- will that be requred??  
+# Solution from GitHub- I DID NOT NEED @property and @title.setter to pass  my pytest- will that be requred??  
 
 # class Game:
 #     def __init__(self, title):
